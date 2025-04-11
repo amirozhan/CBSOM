@@ -181,22 +181,22 @@
     <div class="slider-wrapper" id="slider">
         <div class="figure-container active">
           <img src="images/fig2p.svg" class="teaser">
-          <p class="caption"><strong>Figure 1:</strong>Credit-based BMU selection aligns topographical and recognition updates}. a) ImageNet validation top-1 accuracy during the first few epochs of training for CB-SOM, AB-SOM and ResNet18 models; b) ImageNet validation top-1 accuracy for alternative models; c) Misalignment between task loss and topographical learning loss (refer to methods) for two models, CB-SOM and AB-SOM, color-coded in blue and red, respectively. Higher numbers indicate greater alignment. The black bar indicates the significance level of the difference in mean between AB-SOM and CB-SOM category-task alignment (CTA) indices at each step.</p>
+          <p class="caption"><strong>Figure 1:</strong> Credit-based BMU selection aligns topographical and recognition updates. a) ImageNet validation top-1 accuracy during the first few epochs of training for CB-SOM, AB-SOM and ResNet18 models; b) ImageNet validation top-1 accuracy for alternative models; c) Misalignment between task loss and topographical learning loss (refer to methods) for two models, CB-SOM and AB-SOM, color-coded in blue and red, respectively. Higher numbers indicate greater alignment. The black bar indicates the significance level of the difference in mean between AB-SOM and CB-SOM category-task alignment (CTA) indices at each step.</p>
         </div>
         <div class="figure-container">
           <img src="images/fig3p.svg" class="teaser">
-          <p class="caption"><strong>Figure 2:</strong> V1-like organization in early model layers}. a) (left) Visualization of the weight parameters in the first layer of each model. Filters in each layer are arranged on a 2D simulated cortical sheet (here 8$\times$8). Orientation (middle) and spatial frequency (right) selectivity is color coded for each filter in two model layers (conv1 and Block.1.0.conv1) for CB-SOM ,ABSOM and ResNet-18.
+          <p class="caption"><strong>Figure 2:</strong> V1-like organization in early model layers. a) (left) Visualization of the weight parameters in the first layer of each model. Filters in each layer are arranged on a 2D simulated cortical sheet (here 8x8). Orientation (middle) and spatial frequency (right) selectivity is color coded for each filter in two model layers (conv1 and Block.1.0.conv1) for CB-SOM ,ABSOM and ResNet-18.
             b) Pairwise correlations for alternative models as a function of distance on the 2D map; c) Change in selectivity as a function of distance on the 2D map, plotted for alternative models and two layers. d) Smoothness score for the orientation and  of two layers. e) The distribution of the spatial frequency selectivity in each layer and each model.</p>
         </div>
         <div class="figure-container">
           <img src="images/fig4p.svg" class="teaser">
-          <p class="caption"><strong>Figure 3:</strong> Category-selective clusters in deep CB-SOM layers.} a) Category-Selective maps for each object category from the fLoc dataset (i.e., Face, Body, Place, and Object), including selectivity for size and animacy. Maps are derived by computing the d-prime value between the target versus other categories;
+          <p class="caption"><strong>Figure 3:</strong> Category-selective clusters in deep CB-SOM layers. a) Category-Selective maps for each object category from the fLoc dataset (i.e., Face, Body, Place, and Object), including selectivity for size and animacy. Maps are derived by computing the d-prime value between the target versus other categories;
             b) Pairwise differences in selectivity as a function of distance on the 2D map, analyzed for category selectivity across three models: CB-SOM, AB-SOM, and ResNet-18.
             c) Smoothness measure evaluates the continuity of transition in selectivity within each category-selectivity map and across spatial dimensions of the 2D map. CB-SOM selectivity maps are significantly smoother than both the non-topographical ResNet-18 and the AB-SOM model.</p>
         </div>
         <div class="figure-container">
           <img src="images/fig5p.svg" class="teaser">
-          <p class="caption"><strong>Figure 4:</strong> Representational similarity between models and primates.} a) Assessing representations similarity between models and macaque visual cortex using the BrainScore platform \citep{schrimpf2018brain}. b) Pearson correlation between best-matching patch in each model and the corresponding cortical patches of Fusiform face area (FFA-1), Parahippocampal place area (PPA), and extrastriate body area (EBA) in each hemisphere using the NSD dataset \citep{allen2022massive}. ResNet-18 model was mapped onto each area using cross-validated ridge regression. Mean Pearson correlation is reported for each brain region and error bars indicate the standard deviation across subjects.</p>
+          <p class="caption"><strong>Figure 4:</strong> Representational similarity between models and primates. a) Assessing representations similarity between models and macaque visual cortex using the BrainScore platform (Schrimpf et al., 2018). b) Pearson correlation between best-matching patch in each model and the corresponding cortical patches of Fusiform face area (FFA-1), Parahippocampal place area (PPA), and extrastriate body area (EBA) in each hemisphere using the NSD dataset (Allen et al., 2022). ResNet-18 model was mapped onto each area using cross-validated ridge regression. Mean Pearson correlation is reported for each brain region and error bars indicate the standard deviation across subjects.</p>
         </div>
         <div class="figure-container">
           <img src="images/fig6p.svg" class="teaser">
@@ -237,6 +237,7 @@
       });
       currentIndex = index;
     }
+
   
     // Optional: drag gesture (desktop only)
     let startX = 0;
@@ -247,6 +248,7 @@
     slider.addEventListener('mousedown', (e) => {
       isDragging = true;
       startX = e.pageX;
+      e.preventDefault();
     });
   
     slider.addEventListener('mouseup', (e) => {
@@ -263,6 +265,25 @@
     slider.addEventListener('mouseleave', () => {
       isDragging = false;
     });
+
+    slider.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      startX = e.touches[0].pageX;
+    });
+
+    slider.addEventListener('touchend', (e) => {
+      if (!isDragging) return;
+      isDragging = false;
+      const delta = e.changedTouches[0].pageX - startX;
+      if (delta > 50 && currentIndex > 0) {
+        showFigure(currentIndex - 1);
+      } else if (delta < -50 && currentIndex < containers.length - 1) {
+        showFigure(currentIndex + 1);
+      }
+    });
+
+    
+
   </script>  
 
 </body>
