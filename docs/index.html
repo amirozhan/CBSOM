@@ -98,6 +98,32 @@
       border-radius: 6px;
       margin-top: 2em;
     }
+    .caption {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 10px;
+  }
+
+  .figure-slider {
+    position: relative;
+    overflow: hidden;
+    cursor: grab;
+  }
+
+  .figure-slider.dragging {
+    cursor: grabbing;
+  }
+
+  .slider-track {
+    display: flex;
+    transition: transform 0.3s ease;
+    gap: 20px;
+  }
+  .slider-track .figure-container {
+    min-width: 100%;
+    flex-shrink: 0;
+  }
+
   </style>
 </head>
 <body>
@@ -114,36 +140,51 @@
   <img src="images/Figure1-2.svg" alt="Teaser image" class="teaser">
 
   <h2>Abstract</h2>
-  <p>In the primate neocortex, neurons with similar function are often found to be spatially close. [...]</p>
+  <p>In the primate neocortex, neurons with similar function are often found to be spatially close.
+    Kohonen's self-organizing map (SOM) has been one of the most influential approaches for simulating brain-like topographical organization in artificial neural network models.
+    However, integrating these maps into deep neural networks with multitude of layers has been challenging, with self-organized deep neural networks suffering from substantially diminished capacity to perform visual recognition.
+    We identified a key factor leading to the performance degradation in self-organized topographical neural network models: the discord between predominantly bottom-up learning updates in the self-organizing maps, and those derived from top-down, credit-based learning approaches.
+    To address this, we propose an alternative self organization algorithm, tailored to align with the top-down learning processes in deep neural networks. This model not only emulates critical aspects of cortical topography but also significantly narrows the performance gap between non-topographical and topographical models.
+    This advancement underscores the substantial importance of top-down assigned credits in shaping topographical organization. Our findings are a step in reconciling topographical modeling with the functional efficacy of neural network models, paving the way for more brain-like neural architectures.</p>
 
-  <h2>Results</h2>
-  <div class="slider-nav">
-    <button onclick="showFigure(0)" class="active">Figure 1</button>
-    <button onclick="showFigure(1)">Figure 2</button>
-    <button onclick="showFigure(2)">Figure 3</button>
-    <button onclick="showFigure(3)">Figure 4</button>
-    <button onclick="showFigure(4)">Figure 5</button>
-  </div>
-  <div class="figure-container active">
-    <img src="images/fig1.svg" class="teaser">
-    <p><strong>Figure 1:</strong> Caption for Figure 1.</p>
-  </div>
-  <div class="figure-container">
-    <img src="images/fig2.svg" class="teaser">
-    <p><strong>Figure 2:</strong> Caption for Figure 2.</p>
-  </div>
-  <div class="figure-container">
-    <img src="images/fig3.svg" class="teaser">
-    <p><strong>Figure 3:</strong> Caption for Figure 3.</p>
-  </div>
-  <div class="figure-container">
-    <img src="images/fig4.svg" class="teaser">
-    <p><strong>Figure 4:</strong> Caption for Figure 4.</p>
-  </div>
-  <div class="figure-container">
-    <img src="images/fig5.svg" class="teaser">
-    <p><strong>Figure 5:</strong> Caption for Figure 5.</p>
-  </div>
+    <h2>Results</h2>
+    <div class="slider-nav">
+      <button onclick="showFigure(0)" class="active">Figure 1</button>
+      <button onclick="showFigure(1)">Figure 2</button>
+      <button onclick="showFigure(2)">Figure 3</button>
+      <button onclick="showFigure(3)">Figure 4</button>
+      <button onclick="showFigure(4)">Figure 5</button>
+    </div>
+    
+    <div class="figure-slider" id="slider">
+      <div class="slider-track" id="track">
+        <div class="figure-container active">
+          <img src="images/fig2p.svg" class="teaser">
+          <p class="caption"><strong>Figure 1:</strong>Credit-based BMU selection aligns topographical and recognition updates}. a) ImageNet validation top-1 accuracy during the first few epochs of training for CB-SOM, AB-SOM and ResNet18 models; b) ImageNet validation top-1 accuracy for alternative models; c) Misalignment between task loss and topographical learning loss (refer to methods) for two models, CB-SOM and AB-SOM, color-coded in blue and red, respectively. Higher numbers indicate greater alignment. The black bar indicates the significance level of the difference in mean between AB-SOM and CB-SOM category-task alignment (CTA) indices at each step.</p>
+        </div>
+        <div class="figure-container">
+          <img src="images/fig3p.svg" class="teaser">
+          <p class="caption"><strong>Figure 2:</strong> V1-like organization in early model layers}. a) (left) Visualization of the weight parameters in the first layer of each model. Filters in each layer are arranged on a 2D simulated cortical sheet (here 8$\times$8). Orientation (middle) and spatial frequency (right) selectivity is color coded for each filter in two model layers (conv1 and Block.1.0.conv1) for CB-SOM ,ABSOM and ResNet-18.
+            b) Pairwise correlations for alternative models as a function of distance on the 2D map; c) Change in selectivity as a function of distance on the 2D map, plotted for alternative models and two layers. d) Smoothness score for the orientation and  of two layers. e) The distribution of the spatial frequency selectivity in each layer and each model.</p>
+        </div>
+        <div class="figure-container">
+          <img src="images/fig4p.svg" class="teaser">
+          <p class="caption"><strong>Figure 3:</strong> Category-selective clusters in deep CB-SOM layers.} a) Category-Selective maps for each object category from the fLoc dataset (i.e., Face, Body, Place, and Object), including selectivity for size and animacy. Maps are derived by computing the d-prime value between the target versus other categories;
+            b) Pairwise differences in selectivity as a function of distance on the 2D map, analyzed for category selectivity across three models: CB-SOM, AB-SOM, and ResNet-18.
+            c) Smoothness measure evaluates the continuity of transition in selectivity within each category-selectivity map and across spatial dimensions of the 2D map. CB-SOM selectivity maps are significantly smoother than both the non-topographical ResNet-18 and the AB-SOM model.</p>
+        </div>
+        <div class="figure-container">
+          <img src="images/fig5p.svg" class="teaser">
+          <p class="caption"><strong>Figure 4:</strong> Representational similarity between models and primates.} a) Assessing representations similarity between models and macaque visual cortex using the BrainScore platform \citep{schrimpf2018brain}. b) Pearson correlation between best-matching patch in each model and the corresponding cortical patches of Fusiform face area (FFA-1), Parahippocampal place area (PPA), and extrastriate body area (EBA) in each hemisphere using the NSD dataset \citep{allen2022massive}. ResNet-18 model was mapped onto each area using cross-validated ridge regression. Mean Pearson correlation is reported for each brain region and error bars indicate the standard deviation across subjects.</p>
+        </div>
+        <div class="figure-container">
+          <img src="images/fig6p.svg" class="teaser">
+          <p class="caption"><strong>Figure 5:</strong> Most exciting images for the IT layer in each model. a) For each filter in CB-SOM model, the image with highest elicited activation from the ImageNet validation set is plotted on a grid that matches the arrangement of model filters on the 2D simulated cortical sheet. b) similar to a) but for AB-SOM model.</p>
+        </div>
+      </div>
+    </div>
+    
+  
 
   <h2>BibTeX</h2>
   <pre>
@@ -164,15 +205,56 @@
 
   <script>
     const buttons = document.querySelectorAll('.slider-nav button');
-    const figures = document.querySelectorAll('.figure-container');
-
+    const track = document.getElementById('track');
+    const slider = document.getElementById('slider');
+    let currentIndex = 0;
+  
     function showFigure(index) {
-      figures.forEach((fig, i) => {
-        fig.classList.toggle('active', i === index);
-        buttons[i].classList.toggle('active', i === index);
-      });
+      const width = slider.clientWidth;
+      track.style.transform = `translateX(-${index * width}px)`;
+      buttons.forEach((btn, i) => btn.classList.toggle('active', i === index));
+      currentIndex = index;
     }
+  
+    // Drag to slide logic
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+  
+    slider.addEventListener('mousedown', (e) => {
+      isDown = true;
+      slider.classList.add('dragging');
+      startX = e.pageX;
+    });
+  
+    slider.addEventListener('mouseleave', () => {
+      isDown = false;
+      slider.classList.remove('dragging');
+    });
+  
+    slider.addEventListener('mouseup', () => {
+      isDown = false;
+      slider.classList.remove('dragging');
+    });
+  
+    slider.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX;
+      const walk = x - startX;
+  
+      if (Math.abs(walk) > 50) {
+        if (walk < 0 && currentIndex < buttons.length - 1) {
+          showFigure(currentIndex + 1);
+        } else if (walk > 0 && currentIndex > 0) {
+          showFigure(currentIndex - 1);
+        }
+        isDown = false;
+        slider.classList.remove('dragging');
+      }
+    });
   </script>
+  
 
 </body>
 </html>
