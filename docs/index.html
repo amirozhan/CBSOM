@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CBSOM: Compositional Binding with Self-Organizing Maps</title>
+  <title>Credit-based self organizing maps: training deep topographic networks with minimal performance degradation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -79,26 +79,23 @@
 
   <h2>Abstract</h2>
   <p>
-    In order to generalize combinatorially, neural systems must be able to flexibly and
-    dynamically bind object representations with other attributes. While recent work has
-    made progress using vector symbolic architectures (VSAs), these techniques often depend
-    on operations such as circular convolution or matrix multiplication, which are difficult
-    to implement in biological circuits. Here we introduce CBSOM, a model for compositional
-    binding that uses self-organizing maps (SOMs) and Hebbian plasticity to learn
-    representations that bind in a biologically plausible manner. We demonstrate that CBSOM
-    enables generalization in analogy and rule-based tasks, and provides insight into how
-    brains might implement compositional generalization.
+    In the primate neocortex, neurons with similar function are often found to be spatially close. 
+    Kohonen's self-organizing map (SOM) has been one of the most influential approaches for simulating brain-like topographical organization in artificial neural network models. 
+    However, integrating these maps into deep neural networks with multitude of layers has been challenging, with self-organized deep neural networks suffering from substantially diminished capacity to perform visual recognition. 
+    We identified a key factor leading to the performance degradation in self-organized topographical neural network models: the discord between predominantly bottom-up learning updates in the self-organizing maps, and those derived from top-down, credit-based learning approaches. To address this, we propose an alternative self organization algorithm, tailored to align with the top-down learning processes in deep neural networks. 
+    This model not only emulates critical aspects of cortical topography but also significantly narrows the performance gap between non-topographical and topographical models. This advancement underscores the substantial importance of top-down assigned credits in shaping topographical organization. Our findings are a step in reconciling topographical modeling with the functional efficacy of neural network models, paving the way for more brain-like neural architectures.
   </p>
 
   <h2>BibTeX</h2>
   <pre>
-@inproceedings{
-  dehghani2025cbsom,
-  title={CBSOM: Compositional Binding with Self-Organizing Maps},
-  author={Amir Ozhan Dehghani and Blake A. Richards},
-  booktitle={International Conference on Learning Representations (ICLR)},
-  year={2025},
-  url={https://openreview.net/forum?id=wMgr7wBuUo}
+inproceedings{
+    dehghani2025creditbased,
+    title={Credit-based self organizing maps: training deep topographic networks with minimal performance degradation},
+    author={Amirozhan Dehghani and Xinyu Qian and Asa Farahani and Pouya Bashivan},
+    booktitle={The Thirteenth International Conference on Learning Representations},
+    year={2025},
+    url={https://openreview.net/forum?id=wMgr7wBuUo}
+    }
 }
   </pre>
 
