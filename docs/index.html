@@ -1,14 +1,106 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My ICLR 2025 Project</title>
-  <link rel="stylesheet" href="style.css">
+  <title>CBSOM: Compositional Binding with Self-Organizing Maps</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      max-width: 800px;
+      margin: auto;
+      padding: 40px 20px;
+      line-height: 1.7;
+      background-color: #fdfdfd;
+      color: #333;
+    }
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 0.2em;
+    }
+    h2 {
+      font-size: 1.5em;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.3em;
+      margin-top: 2em;
+    }
+    .authors {
+      font-weight: 500;
+      font-size: 1.1em;
+      margin-bottom: 1em;
+    }
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .button-group a {
+      display: inline-block;
+      margin-right: 10px;
+      padding: 8px 12px;
+      background: #007acc;
+      color: white;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .button-group {
+      margin: 20px 0;
+    }
+    .teaser {
+      width: 100%;
+      margin-top: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    code {
+      background: #eee;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+  </style>
 </head>
 <body>
-  <h1>My Awesome Project</h1>
-  <p><strong>Authors:</strong> Ozhan, et al.</p>
-  <p><strong>Abstract:</strong> We propose a new method to ...</p>
-  <p><a href="paper.pdf">[PDF]</a> | <a href="https://arxiv.org/abs/xxxx.xxxxx">[arXiv]</a></p>
+
+  <h1>CBSOM: Compositional Binding with Self-Organizing Maps</h1>
+  <div class="authors">Amir Ozhan Dehghani, Blake Richards</div>
+
+  <div class="button-group">
+    <a href="https://openreview.net/forum?id=wMgr7wBuUo" target="_blank">📄 Paper</a>
+    <a href="https://github.com/amirozhan/CBSOM" target="_blank">💻 Code</a>
+    <a href="https://openreview.net/pdf?id=wMgr7wBuUo" target="_blank">⬇️ PDF</a>
+  </div>
+
+  <img src="images/teaser.png" alt="Teaser image" class="teaser">
+
+  <h2>Abstract</h2>
+  <p>
+    In order to generalize combinatorially, neural systems must be able to flexibly and
+    dynamically bind object representations with other attributes. While recent work has
+    made progress using vector symbolic architectures (VSAs), these techniques often depend
+    on operations such as circular convolution or matrix multiplication, which are difficult
+    to implement in biological circuits. Here we introduce CBSOM, a model for compositional
+    binding that uses self-organizing maps (SOMs) and Hebbian plasticity to learn
+    representations that bind in a biologically plausible manner. We demonstrate that CBSOM
+    enables generalization in analogy and rule-based tasks, and provides insight into how
+    brains might implement compositional generalization.
+  </p>
+
+  <h2>BibTeX</h2>
+  <pre>
+@inproceedings{
+  dehghani2025cbsom,
+  title={CBSOM: Compositional Binding with Self-Organizing Maps},
+  author={Amir Ozhan Dehghani and Blake A. Richards},
+  booktitle={International Conference on Learning Representations (ICLR)},
+  year={2025},
+  url={https://openreview.net/forum?id=wMgr7wBuUo}
+}
+  </pre>
+
 </body>
 </html>
