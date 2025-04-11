@@ -38,26 +38,24 @@
       text-decoration: underline;
     }
     .button-group {
-    display: flex;
-    justify-content: center;     /* center the group */
-    gap: 20px;                   /* space between buttons */
-    margin: 30px 0;
-    flex-wrap: wrap;             /* responsive wrap on small screens */
-  }
-
-  .button-group a {
-    padding: 10px 16px;
-    background: #007acc;
-    color: white;
-    border-radius: 6px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background 0.2s ease;
-  }
-
-  .button-group a:hover {
-    background: #005b9f;
-  }
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+    .button-group a {
+      padding: 10px 16px;
+      background: #007acc;
+      color: white;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    .button-group a:hover {
+      background: #005b9f;
+    }
     .teaser {
       width: 100%;
       margin-top: 30px;
@@ -70,12 +68,42 @@
       border-radius: 4px;
       font-size: 0.9em;
     }
+    .slider-nav {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .slider-nav button {
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: white;
+      cursor: pointer;
+    }
+    .slider-nav button.active {
+      background-color: #007acc;
+      color: white;
+    }
+    .figure-container {
+      display: none;
+    }
+    .figure-container.active {
+      display: block;
+    }
+    .acknowledgment {
+      font-size: 0.95em;
+      background-color: #f1f1f1;
+      padding: 10px;
+      border-radius: 6px;
+      margin-top: 2em;
+    }
   </style>
 </head>
 <body>
 
   <h1>Credit-based self organizing maps: training deep topographic networks with minimal performance degradation</h1>
-  <div class="authors">Amir Ozhan Dehghani, Xinyu Qian, Asa Farahani, Pouya Bashivan </div>
+  <div class="authors">Amir Ozhan Dehghani, Xinyu Qian, Asa Farahani, Pouya Bashivan</div>
 
   <div class="button-group">
     <a href="https://openreview.net/forum?id=wMgr7wBuUo" target="_blank">👨🏻‍💻 OpenReview</a>
@@ -83,29 +111,68 @@
     <a href="https://openreview.net/pdf?id=wMgr7wBuUo" target="_blank">📄 Paper</a>
   </div>
 
-  <img src="images/image4.png" alt="Teaser image" class="teaser">
+  <img src="images/Figure1-2.svg" alt="Teaser image" class="teaser">
 
   <h2>Abstract</h2>
-  <p>
-    In the primate neocortex, neurons with similar function are often found to be spatially close. 
-    Kohonen's self-organizing map (SOM) has been one of the most influential approaches for simulating brain-like topographical organization in artificial neural network models. 
-    However, integrating these maps into deep neural networks with multitude of layers has been challenging, with self-organized deep neural networks suffering from substantially diminished capacity to perform visual recognition. 
-    We identified a key factor leading to the performance degradation in self-organized topographical neural network models: the discord between predominantly bottom-up learning updates in the self-organizing maps, and those derived from top-down, credit-based learning approaches. To address this, we propose an alternative self organization algorithm, tailored to align with the top-down learning processes in deep neural networks. 
-    This model not only emulates critical aspects of cortical topography but also significantly narrows the performance gap between non-topographical and topographical models. This advancement underscores the substantial importance of top-down assigned credits in shaping topographical organization. Our findings are a step in reconciling topographical modeling with the functional efficacy of neural network models, paving the way for more brain-like neural architectures.
-  </p>
+  <p>In the primate neocortex, neurons with similar function are often found to be spatially close. [...]</p>
+
+  <h2>Results</h2>
+  <div class="slider-nav">
+    <button onclick="showFigure(0)" class="active">Figure 1</button>
+    <button onclick="showFigure(1)">Figure 2</button>
+    <button onclick="showFigure(2)">Figure 3</button>
+    <button onclick="showFigure(3)">Figure 4</button>
+    <button onclick="showFigure(4)">Figure 5</button>
+  </div>
+  <div class="figure-container active">
+    <img src="images/fig1.svg" class="teaser">
+    <p><strong>Figure 1:</strong> Caption for Figure 1.</p>
+  </div>
+  <div class="figure-container">
+    <img src="images/fig2.svg" class="teaser">
+    <p><strong>Figure 2:</strong> Caption for Figure 2.</p>
+  </div>
+  <div class="figure-container">
+    <img src="images/fig3.svg" class="teaser">
+    <p><strong>Figure 3:</strong> Caption for Figure 3.</p>
+  </div>
+  <div class="figure-container">
+    <img src="images/fig4.svg" class="teaser">
+    <p><strong>Figure 4:</strong> Caption for Figure 4.</p>
+  </div>
+  <div class="figure-container">
+    <img src="images/fig5.svg" class="teaser">
+    <p><strong>Figure 5:</strong> Caption for Figure 5.</p>
+  </div>
 
   <h2>BibTeX</h2>
   <pre>
-inproceedings{
-    dehghani2025creditbased,
-    title={Credit-based self organizing maps: training deep topographic networks with minimal performance degradation},
-    author={Amirozhan Dehghani and Xinyu Qian and Asa Farahani and Pouya Bashivan},
-    booktitle={The Thirteenth International Conference on Learning Representations},
-    year={2025},
-    url={https://openreview.net/forum?id=wMgr7wBuUo}
-    }
+@inproceedings{
+  dehghani2025creditbased,
+  title={Credit-based self organizing maps: training deep topographic networks with minimal performance degradation},
+  author={Amirozhan Dehghani and Xinyu Qian and Asa Farahani and Pouya Bashivan},
+  booktitle={The Thirteenth International Conference on Learning Representations},
+  year={2025},
+  url={https://openreview.net/forum?id=wMgr7wBuUo}
 }
   </pre>
+
+  <div class="acknowledgment">
+    <strong>Acknowledgment:</strong><br>
+    This research was supported by the Healthy-Brains-Healthy-Lives startup supplement grant, the NSERC Discovery grant RGPIN-2021-03035, and CIHR Project Grant PJT-191957. P.B. was supported by FRQ-S Research Scholars Junior 1 grant 310924, and the William Dawson Scholar award. All analyses were executed using resources provided by the Digital Research Alliance of Canada (Compute Canada) and funding from Canada Foundation for Innovation project number 42730.
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll('.slider-nav button');
+    const figures = document.querySelectorAll('.figure-container');
+
+    function showFigure(index) {
+      figures.forEach((fig, i) => {
+        fig.classList.toggle('active', i === index);
+        buttons[i].classList.toggle('active', i === index);
+      });
+    }
+  </script>
 
 </body>
 </html>
