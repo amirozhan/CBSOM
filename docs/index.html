@@ -57,18 +57,25 @@
       flex-wrap: wrap;
     }
     .button-group a {
-    padding: 6px 12px; 
+    padding: 6px 12px;
     background: #007acc;
     color: white;
     border-radius: 6px;
-    font-weight: 500; 
+    font-weight: 500;
     text-decoration: none;
     font-size: 0.95em;
-    line-height: 1.2;
     transition: background 0.2s ease;
-    gap: 6px;
     display: inline-flex;
     align-items: center;
+    gap: 6px;
+  }
+    .button-group a.icon-only {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
     }
     .button-group a:hover {
       background: #005b9f;
@@ -197,25 +204,26 @@
   </div>
 
   <div class="button-group">
-    <a href="https://openreview.net/forum?id=wMgr7wBuUo" target="_blank">
+    <a href="https://openreview.net/forum?id=wMgr7wBuUo" target="_blank" rel="noopener noreferrer">
       <i class="fas fa-file-alt"></i> OpenReview
     </a>
-    <a href="https://openreview.net/pdf?id=wMgr7wBuUo" target="_blank">
+    <a href="https://openreview.net/pdf?id=wMgr7wBuUo" target="_blank" rel="noopener noreferrer">
       <i class="fas fa-file-pdf"></i> Paper
     </a>
-    <a href="https://iclr.cc/virtual/2025/poster/27851" target="_blank" style="display: inline-block;">
-      <img src="images/ICLR-logo.svg" alt="ICLR Logo" style="height: 24px; filter: brightness(0) invert(1);">
+    <a href="https://iclr.cc/virtual/2025/poster/27851" class="icon-only" target="_blank" rel="noopener noreferrer">
+      <img src="images/ICLR-logo.svg" alt="ICLR Logo" style="height: 20px; filter: brightness(0) invert(1);">
+
     </a>
-    <a href="https://github.com/BashivanLab/CBSOM" target="_blank">
+    <a href="https://github.com/BashivanLab/CBSOM" class="icon-only" target="_blank" rel="noopener noreferrer"> 
       <i class="fab fa-github"></i>
     </a>
-    <a href="https://x.com/great_caster" target="_blank">
+    <a href="https://x.com/great_caster" class="icon-only" target="_blank" rel="noopener noreferrer">
       <i class="fab fa-x-twitter"></i>
     </a>
-    <a href="https://www.linkedin.com/in/amir-ozhan-dehghani/" target="_blank">
+    <a href="https://www.linkedin.com/in/amir-ozhan-dehghani/" class="icon-only" target="_blank" rel="noopener noreferrer">
       <i class="fab fa-linkedin"></i>
     </a>
-    <a href="mailto:amirozhan.dehghani@mail.mcgill.ca">
+    <a href="mailto:amirozhan.dehghani@mail.mcgill.ca" class="icon-only" > 
       <i class="fas fa-envelope"></i>
     </a>   
   </div>
