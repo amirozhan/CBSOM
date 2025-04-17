@@ -15,8 +15,8 @@
       line-height: 1.7;
       background-color: #fdfdfd;
       color: #333;
-      
     }
+  
     h1 {
       font-size: 2.4em;
       font-weight: 700;
@@ -27,14 +27,16 @@
       background: linear-gradient(to right, #007acc, #00b4d8);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.08); 
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
     }
+  
     h2 {
       font-size: 1.5em;
       border-bottom: 1px solid #ddd;
       padding-bottom: 0.3em;
       margin-top: 2em;
     }
+  
     .authors {
       font-weight: 500;
       font-size: 1.1em;
@@ -42,13 +44,16 @@
       margin-top: 0.5em;
       color: #555;
     }
+  
     a {
       color: #007acc;
       text-decoration: none;
     }
+  
     a:hover {
       text-decoration: underline;
     }
+  
     .button-group {
       display: flex;
       justify-content: center;
@@ -56,94 +61,81 @@
       margin: 30px 0;
       flex-wrap: wrap;
     }
+  
     .button-group a {
-    padding: 6px 12px;
-    background: #007acc;
-    color: white;
-    border-radius: 6px;
-    font-weight: 500;
-    text-decoration: none;
-    font-size: 0.95em;
-    transition: all 0.2s ease-in-out;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .button-group a,
-  .button-group a.logo-link,
-  .button-group a.icon-only {
-    transition: all 0.2s ease-in-out;
-  }
-  .button-group a.logo-link {
-    background: #007acc;
-    border-radius: 6px;
-    padding: 6px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 42px;
-  }
-  .button-group a.icon-only i {
-  font-size: 1.3em; 
-}
-
-  .button-group a:hover {
-    background: #005b9f;
-    transform: scale(1.05);
-    transition: all 0.2s ease-in-out;
-  }
-  .button-group a.logo-link:hover,
-  .button-group a.icon-only:hover {
-    background: #005b9f;
-    transform: scale(1.05);
-  }
-
-  .button-group a.logo-link img {
+      padding: 6px 12px;
+      background: #007acc;
+      color: white;
+      border-radius: 6px;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 0.95em;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease-in-out;
+    }
+  
+    .button-group a.logo-link,
+    .button-group a.icon-only {
+      width: 42px;
+      height: 42px;
+      padding: 6px;
+      justify-content: center;
+      align-items: center;
+      display: inline-flex;
+      border-radius: 6px;
+      background: #007acc;
+      transition: all 0.2s ease-in-out;
+    }
+  
+    .button-group a.logo-link img {
       height: 24px;
       display: block;
-      }
-  .button-group a.icon-only {
-    width: 42px;
-    height: 42px;
-    padding: 6px;
-    justify-content: center;
-    align-items: center;
-    display: inline-flex;
-    border-radius: 6px;
-    background: #007acc;
-    transition: background 0.2s ease;
     }
-   
+  
+    .button-group a.icon-only i {
+      font-size: 1.3em;
+    }
+  
+    .button-group a:hover,
+    .button-group a.logo-link:hover,
+    .button-group a.icon-only:hover {
+      background: #005b9f;
+      transform: scale(1.05);
+    }
+  
     .button-group i {
-    font-size: 1em;
+      font-size: 1em;
     }
+  
     .button-group a:not(.icon-only) i {
-    margin-right: 6px;
+      margin-right: 6px;
     }
-    
+  
     .teaser {
       max-width: 100%;
       height: auto;
       border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       display: block;
       margin: auto;
     }
-
+  
     .caption {
       font-size: 0.9em;
       color: #666;
       margin-top: 10px;
       text-align: left;
     }
-
+  
     .slider-nav {
       display: flex;
       justify-content: center;
       gap: 10px;
       margin: 20px 0;
     }
-
+  
     .slider-nav button {
       padding: 6px 12px;
       border: 1px solid #ccc;
@@ -152,34 +144,35 @@
       cursor: pointer;
       font-size: 0.9em;
     }
-
+  
     .slider-nav button.active {
       background-color: #007acc;
       color: white;
     }
-
+  
     .slider-wrapper {
       position: relative;
       overflow: hidden;
     }
+  
     .slider-nav button:focus {
-    outline: 2px solid #007acc;
-    outline-offset: 2px;
+      outline: 2px solid #007acc;
+      outline-offset: 2px;
     }
-
+  
     .figure-container {
       display: none;
       text-align: center;
     }
-    .header {
-    text-align: center;
-    margin-bottom: 30px;
-    }
-
+  
     .figure-container.active {
       display: block;
     }
-    
+  
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
   
     code {
       background: #eee;
@@ -187,47 +180,48 @@
       border-radius: 4px;
       font-size: 0.9em;
     }
-
+  
     pre code {
-    background: #f6f8fa;
-    padding: 16px;
-    display: block;
-    border-radius: 6px;
-    overflow-x: auto;
-    font-family: Consolas, monospace;
-    font-size: 0.85em;
-}
-    
-  .acknowledgment {
-    font-size: 0.95em;
-    background-color: #f1f1f1;
-    padding: 10px;
-    border-radius: 6px;
-    margin-top: 2em;
-  }
-
-
-  .figure-slider {
-    position: relative;
-    overflow: hidden;
-    cursor: grab;
-  }
-
-  .figure-slider.dragging {
-    cursor: grabbing;
-  }
-
-  .slider-track {
-    display: flex;
-    transition: transform 0.3s ease;
-    gap: 20px;
-  }
-  .slider-track .figure-container {
-    min-width: 100%;
-    flex-shrink: 0;
-  }
-
+      background: #f6f8fa;
+      padding: 16px;
+      display: block;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-family: Consolas, monospace;
+      font-size: 0.85em;
+    }
+  
+    .acknowledgment {
+      font-size: 0.95em;
+      background-color: #f1f1f1;
+      padding: 10px;
+      border-radius: 6px;
+      margin-top: 2em;
+    }
+  
+    .figure-slider {
+      position: relative;
+      overflow: hidden;
+      cursor: grab;
+    }
+  
+    .figure-slider.dragging {
+      cursor: grabbing;
+    }
+  
+    .slider-track {
+      display: flex;
+      transition: transform 0.3s ease;
+      gap: 20px;
+    }
+  
+    .slider-track .figure-container {
+      min-width: 100%;
+      flex-shrink: 0;
+    }
   </style>
+  
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
