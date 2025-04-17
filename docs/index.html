@@ -69,6 +69,20 @@
     align-items: center;
     gap: 6px;
   }
+  .button-group a.logo-link {
+    background: #007acc;
+    border-radius: 6px;
+    padding: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px;
+  }
+
+.button-group a.logo-link img {
+    height: 24px;
+    display: block;
+    }
     .button-group a.icon-only {
     width: 42px;
     height: 42px;
@@ -76,15 +90,23 @@
     justify-content: center;
     align-items: center;
     display: inline-flex;
+    border-radius: 6px;
+    background: #007acc;
     }
     .button-group a:hover {
       background: #005b9f;
     }
     .button-group i {
     font-size: 1em;
-    margin-right: 4px;
     }
-   
+    .button-group a:not(.icon-only) i {
+    margin-right: 6px;
+    }
+
+    .button-group a.icon-only:hover {
+    background: #005b9f;
+    }
+    
     .teaser {
       max-width: 100%;
       height: auto;
@@ -210,7 +232,7 @@
     <a href="https://openreview.net/pdf?id=wMgr7wBuUo" target="_blank" rel="noopener noreferrer">
       <i class="fas fa-file-pdf"></i> Paper
     </a>
-    <a href="https://iclr.cc/virtual/2025/poster/27851" class="icon-only" target="_blank" rel="noopener noreferrer">
+    <a href="https://iclr.cc/virtual/2025/poster/27851" class="logo-link" target="_blank" rel="noopener noreferrer">
       <img src="images/ICLR-logo.svg" alt="ICLR Logo" style="height: 20px; filter: brightness(0) invert(1);">
 
     </a>
